@@ -9,6 +9,7 @@
         <filter-name>controller</filter-name>
         <filter-class>com.chf.controller.Controller</filter-class>
     </filter>
+
     <filter-mapping>
         <filter-name>controller</filter-name>
         <url-pattern>/*</url-pattern>
