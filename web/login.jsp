@@ -5,24 +5,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/function.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-<form action="login.action">
-    <fieldset>
-        <legend>Login</legend>
-        <ul>
-            <li>
-                <label for="username">UserName:</label>
-                <input type="text" id="username" name="username" class="small"maxlength="10" required="required" placeholder="UserName" autofocus="autofocus">
-            </li>
-            <li>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password"class="small" maxlength="10" placeholder="Password">
-            </li>
-        </ul>
-        <button type="submit" id="loginBtn">Log in</button>
-    </fieldset>
-</form>
+	<form action="login.action" class="m-login">
+		<div class="m-login-heading">
+		<h2>Student Manage System</h2>
+		</div>
+		<div class="m-login-content">
+		<div class="u-username u-input">
+			<%--<label for="username">UserName:</label>--%>
+            <i class="fa fa-user"></i>
+			<input type="text" id="username" name="username" class="small"maxlength="10" required="required" placeholder="UserName" autofocus="autofocus">
+		</div>
+		<div class="u-password u-input">
+			<%--<label for="password">Password:</label>--%>
+                <i class="fa fa-lock"></i>
+			<input type="password" id="password" name="password"class="small" maxlength="10" placeholder="Password">
+		</div>
+		<button type="submit" id="loginBtn">Log in</button>
+		</div>
+	</form>
 </body>
 </html>
