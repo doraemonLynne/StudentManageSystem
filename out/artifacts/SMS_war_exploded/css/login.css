@@ -3,10 +3,6 @@
 body{
     height: 100%;
     text-align: center;
-    padding-bottom: 110px;
-    padding-top: 65px;
-    position: relative;
-    overflow: hidden;
     color: #666;
 }
 body::before{
@@ -24,10 +20,15 @@ body{
 }
 .m-login{
     width: 500px;
-    margin: 0 auto;
-    margin-top: 42px;
     padding:20px;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     z-index: 10;
     background: #fff;
     border-radius: 3px;
