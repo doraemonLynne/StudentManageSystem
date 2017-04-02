@@ -42,6 +42,7 @@ public class LoginAction extends Action {
         User luser=new User();
         luser=this.userService.findUserByUserName(userName);
         session.setAttribute("UserName",luser.getUserName());
+        session.setAttribute("Role",luser.getRole());
         if(luser!=null){
             if((luser.getPassword()).equals(passWord)){
                 return "index.jsp";

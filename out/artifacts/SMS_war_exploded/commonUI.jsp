@@ -36,8 +36,10 @@
         var aFirMenu = document.getElementsByClassName('fir-menu');
         var aFirMenuText = document.getElementsByClassName('fir-menu-text');
         var oContent = document.getElementsByClassName('g-content')[0];
+        var oUserRole = document.getElementById('user-role');
         var i = 0;
 
+        //userDetailsDrop
         oDetailDrop.onclick = function() {
             startMove(oUserLogout, {
                 height: 100,
@@ -50,6 +52,8 @@
                 });
             }
         }
+
+        //MenuDrop
         oMenuDrop.onclick = function() {
             if (oMenu.style.left == '0px') {
                 startMove(oMenu, {
@@ -68,12 +72,13 @@
             }
         }
 
+        //MenuSwitch
         for (i = 0; i < aFirMenuText.length; i++) {
             aFirMenuText[i].onclick = function() {
                 var aSecMenu = this.parentNode.getElementsByClassName('sec-menu')[0];
                 var aDown = this.parentNode.getElementsByClassName('fa-caret-down')[0];
                 var aRight = this.parentNode.getElementsByClassName('fa-caret-right')[0];
-                var aSecMenuA = aSecMenu.getElementsByClassName('a');
+                var aSecMenuA = aSecMenu.getElementsByTagName('a');
                 var Height = aSecMenu.offsetHeight;
                 if (aSecMenu.className == 'sec-menu') {
                     addClass(aSecMenu, 'active');
@@ -85,7 +90,39 @@
                     aRight.style.display = 'inline-block';
                 }
             }
+        }
 
+        //MenuOnPage
+        var onPage=location.href.split('http://localhost:8080/SMS/')[1];
+        var aFirMenuDis = oMenu.getElementsByClassName('fir-menu');
+        var aSecMenuDis = oMenu.getElementsByClassName('sec-menu');
+        var aDownDis = oMenu.getElementsByClassName('fa-caret-down');
+        var aRightDis = oMenu.getElementsByClassName('fa-caret-right');
+        var onPageFlag=0;
+
+        if(onPage=="viewMark.action"){
+            onPageFlag=0;
+        }
+        else if(onPage=="updateMark.action"){
+            onPageFlag=1;
+        }
+        else if(onPage=="updateUsers.action"){
+            onPageFlag=2;
+        }
+
+        for(var k=0;k<aFirMenuDis.length;k++){
+            if(oUserRole.innerHTML==k){
+                addClass(aSecMenuDis[k], 'active');
+                aFirMenuDis[k].style.background = '#35404d';
+                aDownDis[k].style.display = 'inline-block';
+                aDownDis[k].style.color = '#FF6C60';
+                aRightDis[k].style.display = 'none';
+
+                var aText = aFirMenuDis[k].getElementsByTagName('span')[0];
+                var aSecMenuDisA = aFirMenuDis[k].getElementsByTagName('a');
+                aSecMenuDisA[onPageFlag].style.color = '#FF6C60';
+                aText.style.color = '#fff';
+            }
         }
     }
 </script>
@@ -100,6 +137,7 @@
             <div class="m-user-details f-fr">
                 <img src="images/portrait.png" style="width: 50px;height: 50px;">
                 <b><% out.println(session.getAttribute("UserName")); %></b>
+                <strong id="user-role" style="display: none;"><% out.println(session.getAttribute("Role")); %></strong>
                 <span class="fa fa-caret-down fa-2x" id="user-dropdown"></span>
             </div>
             <div class="m-user-logout" id="user-logout">

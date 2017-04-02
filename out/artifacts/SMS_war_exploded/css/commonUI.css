@@ -159,7 +159,7 @@ body{
 }
 .fir-menu-text span i{
     position: absolute;
-    right: 10px;
+    right: 20px;
 }
 .fir-menu-text span .fa-caret-down{
     display: none;
