@@ -9,9 +9,6 @@
 
 package com.chf.action;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.chf.entity.User;
 import com.chf.service.UserService;
 
@@ -25,7 +22,7 @@ import com.chf.service.UserService;
  * @since    JDK 1.7
  * @see
  */
-public class LoginAction extends Action {
+public class LogoutAction extends Action {
     private static final long serialVersionUID = 4878247652427455524L;
     private UserService userService;
     private String userName;
@@ -33,18 +30,8 @@ public class LoginAction extends Action {
     @Override
     public String execute()
     {
-        userName=request.getParameter("username");
-        passWord=request.getParameter("password");
-        userService=new UserService();
-        User luser=new User();
-        luser=this.userService.findUserByUserName(userName);
-        request.setAttribute("UserName",luser.getUserName());
-        if(luser!=null){
-            if((luser.getPassword()).equals(passWord)){
-                return "index.jsp";
-            }
-        }
-        return "fail.jsp";
+        request.removeAttribute("UserName");
+        return "logout.jsp";
     }
 }
  

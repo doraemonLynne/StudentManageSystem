@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>失败界面</title>
+    <title>注销界面</title>
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
     <style type="text/css">
         body {
@@ -61,7 +61,7 @@
             color: #3282e6;
             text-decoration: none;
         }
-        .failPage .fa-frown-o{
+        .failPage .fa-smile-o{
             color: darkgreen;
             margin-bottom: 20px;
             font-size: 100px;
@@ -72,8 +72,8 @@
 <div class="container text-center failPage" id="logout">
     <div class="row">
         <div class="col-md-12">
-            <i class="fa fa-frown-o"></i>
-            <h1>出错啦!</h1>
+            <i class="fa fa-smile-o"></i>
+            <h1>注销成功!</h1>
         </div>
     </div>
     <div class="row">

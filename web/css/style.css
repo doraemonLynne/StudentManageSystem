@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.g-content{
+    width: 100%;
+    /*border: 1px solid #aaa;*/
+    margin-top: 80px;
+    margin-left: 188px;
+    padding: 20px;
+}

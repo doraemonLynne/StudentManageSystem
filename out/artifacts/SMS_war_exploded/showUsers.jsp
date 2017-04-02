@@ -3,21 +3,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>显示用户</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>显示用户</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<table border="1">
-		<tr>
-			<th>用户名</th>
-			<th>口令</th>
-		</tr>
-		<c:forEach var="user" items="${users}">
-			<tr>
-				<td>${user.userName }</td>
-				<td>${user.password }</td>
-			</tr>		
-		</c:forEach>
-	</table>
+<jsp:include page="commonUI.jsp" />
+<div class="g-content">
+    <table border="1">
+        <tr>
+            <th>用户名</th>
+            <th>口令</th>
+        </tr>
+        <c:forEach var="user" items="${users}">
+            <tr>
+                <td>${user.userName }</td>
+                <td>${user.password }</td>
+            </tr>
+        </c:forEach>
+    </table>
+</div>
 </body>
 </html>

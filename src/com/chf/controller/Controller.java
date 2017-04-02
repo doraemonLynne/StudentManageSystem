@@ -90,7 +90,6 @@ public class Controller implements Filter
                         break;
                     }
                     case "/deleteUser":{
-
                         action=new DeleteUserAction();
                         action.setRequest(request);
                         action.setResponse(response);
@@ -110,7 +109,6 @@ public class Controller implements Filter
                         break;
                     }
                     case "/updateUser":{
-
                         action=new UpdateUserAction();
                         action.setRequest(request);
                         action.setResponse(response);
@@ -122,6 +120,15 @@ public class Controller implements Filter
                     case "/login":{
 
                         action=new LoginAction();
+                        action.setRequest(request);
+                        action.setResponse(response);
+                        String result=action.execute();
+                        dispatcher=request.getRequestDispatcher(result);
+                        dispatcher.forward(request,response);
+                        break;
+                    }
+                    case "/logout":{
+                        action=new LogoutAction();
                         action.setRequest(request);
                         action.setResponse(response);
                         String result=action.execute();
