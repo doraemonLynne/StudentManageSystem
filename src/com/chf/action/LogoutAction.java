@@ -34,6 +34,7 @@ public class LogoutAction extends Action {
     {
         HttpSession session = request.getSession();
         session.removeAttribute("UserName");
+        session.invalidate();
         return "logout.jsp";
     }
 }
