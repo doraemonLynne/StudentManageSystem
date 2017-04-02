@@ -74,6 +74,7 @@ public class UserDao {
 				user.setId(set.getInt("id"));
 				user.setUserName(set.getString("username"));
 				user.setPassword(set.getString("password"));
+                user.setRole(set.getInt("role"));
 
 				break;
 			}
@@ -97,6 +98,7 @@ public class UserDao {
 				user.setId(set.getInt("id"));
 				user.setUserName(set.getString("username"));
 				user.setPassword(set.getString("password"));
+                user.setRole(set.getInt("role"));
 
 				break;
 			}
@@ -126,6 +128,7 @@ public class UserDao {
 				user.setId(set.getInt("id"));
 				user.setUserName(set.getString("username"));
 				user.setPassword(set.getString("password"));
+                user.setRole(set.getInt("role"));
 
 				list.add(user);
 			}

@@ -12,6 +12,8 @@ package com.chf.action;
 import com.chf.entity.User;
 import com.chf.service.UserService;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * ClassName:LoginAction <br/>
  * Function: TODO ADD FUNCTION. <br/>
@@ -30,7 +32,8 @@ public class LogoutAction extends Action {
     @Override
     public String execute()
     {
-        request.removeAttribute("UserName");
+        HttpSession session = request.getSession();
+        session.removeAttribute("UserName");
         return "logout.jsp";
     }
 }

@@ -15,6 +15,8 @@ import java.util.List;
 import com.chf.entity.User;
 import com.chf.service.UserService;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * ClassName:LoginAction <br/>
  * Function: TODO ADD FUNCTION. <br/>
@@ -33,12 +35,13 @@ public class LoginAction extends Action {
     @Override
     public String execute()
     {
+        HttpSession session = request.getSession();
         userName=request.getParameter("username");
         passWord=request.getParameter("password");
         userService=new UserService();
         User luser=new User();
         luser=this.userService.findUserByUserName(userName);
-        request.setAttribute("UserName",luser.getUserName());
+        session.setAttribute("UserName",luser.getUserName());
         if(luser!=null){
             if((luser.getPassword()).equals(passWord)){
                 return "index.jsp";

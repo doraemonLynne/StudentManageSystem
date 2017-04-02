@@ -1,18 +1,20 @@
 package com.chf.entity;
 
 /**
- * ÓÃ»§±í
+ * ï¿½Ã»ï¿½ï¿½ï¿½
  * @author shuai
  *
  */
 public class User 
 {
-	//ÎÞÒâÒå£¬×ÔÔö³¤id£¬Ö÷¼ü
+	//ï¿½ï¿½ï¿½ï¿½ï¿½å£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	private Integer id;
-	//ÓÃ»§Ãû
+	//ï¿½Ã»ï¿½ï¿½ï¿½
 	private String userName;
-	//ÃÜÂë
+	//ï¿½ï¿½ï¿½ï¿½
 	private String password;
+
+    private Integer role;
 	
 	public Integer getId() {
 		return id;
@@ -32,6 +34,12 @@ public class User
 	public void setPassword(String password) {
 		this.password = password;
 	}
+    public Integer getRole() {
+        return role;
+    }
+    public void setRole(Integer role) {
+        this.role = role;
+    }
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", userName=" + userName + ", password="

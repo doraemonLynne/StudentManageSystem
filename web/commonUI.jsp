@@ -99,7 +99,7 @@
             <i class="fa fa-search fa-2x f-fl"></i>
             <div class="m-user-details f-fr">
                 <img src="images/portrait.png" style="width: 50px;height: 50px;">
-                <b><% out.println(request.getAttribute("UserName")); %></b>
+                <b><% out.println(session.getAttribute("UserName")); %></b>
                 <span class="fa fa-caret-down fa-2x" id="user-dropdown"></span>
             </div>
             <div class="m-user-logout" id="user-logout">
@@ -122,7 +122,7 @@
             <span>Student<i class="fa fa-caret-right"></i><i class="fa fa-caret-down"></i></span>
         </div>
         <div class="sec-menu">
-            <a href="javascript:;">View Mark</a>
+            <a href="viewMark.action">View Mark</a>
         </div>
     </div>
     <div class="fir-menu">
@@ -131,8 +131,8 @@
             <span>Teacher<i class="fa fa-caret-right"></i><i class="fa fa-caret-down"></i></span>
         </div>
         <div class="sec-menu">
-            <a href="javascript:;">View Mark</a>
-            <a href="javascript:;">Update Mark</a>
+            <a href="viewMark.action">View Mark</a>
+            <a href="updateMark.action">Update Mark</a>
         </div>
     </div>
     <div class="fir-menu">
@@ -141,9 +141,9 @@
             <span>Manager<i class="fa fa-caret-right"></i><i class="fa fa-caret-down"></i></span>
         </div>
         <div class="sec-menu">
-            <a href="javascript:;">View Mark</a>
-            <a href="javascript:;">Update Mark</a>
-            <a href="javascript:;">Update Users</a>
+            <a href="viewMark.action">View Mark</a>
+            <a href="updateMark.action">Update Mark</a>
+            <a href="updateUsers.action">Update Users</a>
         </div>
     </div>
 </div>
