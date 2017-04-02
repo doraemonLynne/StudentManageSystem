@@ -14,6 +14,8 @@ import java.util.List;
 import com.chf.entity.User;
 import com.chf.service.UserService;
 
+import static java.lang.Integer.parseInt;
+
 /** 
  * ClassName:AddUserAction <br/> 
  * Function: TODO ADD FUNCTION. <br/> 
@@ -29,17 +31,24 @@ public class AddUserAction extends Action {
 	private UserService userService;
 	private String userName;
 	private String passWord;
+    private String role;
+    private String roleId;
 	@Override
 	public String execute()
 	{
-		userName=request.getParameter("username");
+		userName=request.getParameter("userName");
 		passWord=request.getParameter("password");
+        role=request.getParameter("role");
+        roleId=request.getParameter("roleId");
 		userService=new UserService();
 		User auser=new User();
 		auser.setUserName(userName);
 		auser.setPassword(passWord);
+        auser.setRole(parseInt(role));
+        auser.setRoleId(parseInt(roleId));
 		this.userService.addUser(auser);
 		return "success.jsp";
 	}
+
 }
  

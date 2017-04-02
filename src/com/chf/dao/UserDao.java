@@ -48,9 +48,11 @@ public class UserDao {
 	public int insert(User user) {
 		StringBuffer sql = new StringBuffer();
 
-		sql.append("insert into user(username,password)");
+		sql.append("insert into user(username,password,role,roleId)");
 		sql.append("values('" + user.getUserName() + "',");
-		sql.append("'" + user.getPassword() + "');");
+        sql.append("'" + user.getPassword() + "',");
+        sql.append("'" + user.getRole() + "',");
+		sql.append("'" + user.getRoleId() + "');");
 
 		return DBUtil.executeUpdateInsertDelete(sql.toString());
 	}
@@ -131,6 +133,7 @@ public class UserDao {
 				user.setUserName(set.getString("username"));
 				user.setPassword(set.getString("password"));
                 user.setRole(set.getInt("role"));
+                user.setRoleId(set.getInt("roleId"));
 
 				list.add(user);
 			}

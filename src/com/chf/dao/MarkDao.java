@@ -76,6 +76,7 @@ public class MarkDao {
 				user.setUserName(set.getString("username"));
 				user.setPassword(set.getString("password"));
                 user.setRole(set.getInt("role"));
+                user.setRoleId(set.getInt("roleId"));
 
 				break;
 			}
@@ -100,6 +101,7 @@ public class MarkDao {
 				user.setUserName(set.getString("username"));
 				user.setPassword(set.getString("password"));
                 user.setRole(set.getInt("role"));
+                user.setRoleId(set.getInt("roleId"));
 
 				break;
 			}
@@ -130,6 +132,7 @@ public class MarkDao {
 				user.setUserName(set.getString("username"));
 				user.setPassword(set.getString("password"));
                 user.setRole(set.getInt("role"));
+                user.setRoleId(set.getInt("roleId"));
 
 				list.add(user);
 			}
