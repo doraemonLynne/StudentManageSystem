@@ -1,12 +1,16 @@
 package com.chf.service;
 
-import java.util.List;
-
 import com.chf.dao.UserDao;
 import com.chf.entity.User;
 
-public class UserService {
+import com.chf.dao.MarkDao;
+import com.chf.entity.Mark;
+
+import java.util.List;
+
+public class MarkService {
 	private UserDao userDao = new UserDao();
+    private MarkDao markDao = new MarkDao();
 
 	/**
 	 * ����û�������û�
@@ -21,9 +25,9 @@ public class UserService {
 		
 		return list;
 	}
-    public List<User> findUsers()
+    public List<Mark> findMark()
     {
-        List<User> list= userDao.findUserAll();
+        List<Mark> list= markDao.findMarkAll();
 
         return list;
     }

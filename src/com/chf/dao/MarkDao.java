@@ -1,13 +1,14 @@
 package com.chf.dao;
 
+import com.chf.dao.dbhelp.DBUtil;
+import com.chf.entity.User;
+import com.chf.entity.Mark;
+
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.chf.dao.dbhelp.DBUtil;
-import com.chf.entity.User;
-
-public class UserDao {
+public class MarkDao {
 	/**
 	 * �����û�
 	 * @param user������µ��û�
@@ -75,7 +76,6 @@ public class UserDao {
 				user.setUserName(set.getString("username"));
 				user.setPassword(set.getString("password"));
                 user.setRole(set.getInt("role"));
-                user.setRoleId(set.getInt("roleId"));
 
 				break;
 			}
@@ -100,7 +100,6 @@ public class UserDao {
 				user.setUserName(set.getString("username"));
 				user.setPassword(set.getString("password"));
                 user.setRole(set.getInt("role"));
-                user.setRoleId(set.getInt("roleId"));
 
 				break;
 			}
@@ -140,23 +139,24 @@ public class UserDao {
 		return list;
 	}
 
-    public List<User> findUserAll(){
-        List<User> list = new ArrayList<User>();
+    public List<Mark> findMarkAll(){
+        List<Mark> list = new ArrayList<Mark>();
 
         StringBuffer sql=new StringBuffer();
-        sql.append("SELECT * FROM user;");
+        sql.append("SELECT * FROM mark;");
 
         try{
             ResultSet set=DBUtil.executeQuery(sql.toString());
             while(set.next()){
-                User user=new User();
-                user.setId(set.getInt("id"));
-                user.setUserName(set.getString("username"));
-                user.setPassword(set.getString("password"));
-                user.setRole(set.getInt("role"));
-                user.setRoleId(set.getInt("roleId"));
+                Mark mark=new Mark();
+                mark.setId(set.getInt("id"));
+                mark.setStuId(set.getInt("stuId"));
+                mark.setStuName(set.getString("stuName"));
+                mark.setMarkEng(set.getInt("English"));
+                mark.setMarkMath(set.getInt("Math"));
+                mark.setMarkPhy(set.getInt("Physics"));
 
-                list.add(user);
+                list.add(mark);
             }
         }catch(Exception ex){
             ex.printStackTrace();

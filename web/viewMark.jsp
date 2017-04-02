@@ -1,5 +1,8 @@
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,7 +13,92 @@
 <body>
 <jsp:include page="commonUI.jsp" />
 <div class="g-content">
-    <h2>View Mark</h2>
+    <h2 class="content-title">View Mark</h2>
+    <table class="resultsTable sortable">
+        <tr>
+            <th>Student Id</th>
+            <th>Student Name</th>
+            <th>English</th>
+            <th>Math</th>
+            <th>Physics</th>
+        </tr>
+        <c:forEach var="mark" items="${marks}">
+            <tr>
+                <td>${mark.stuId}</td>
+                <td>${mark.stuName}</td>
+                <td>${mark.markEng}</td>
+                <td>${mark.markMath}</td>
+                <td>${mark.markPhy}</td>
+            </tr>
+        </c:forEach>
+    </table>
+    <div id="container" class="showGraph"></div>
+    <script type="text/javascript">
+        $(function() {
+            var Eng=[];
+            var Math=[];
+            var Phy=[];
+            var EngSum=0;
+            var MathSum=0;
+            var PhySum=0;
+            var EngAve = 0;
+            var MathAve = 0;
+            var PhyAve = 0;
+
+            $("tbody tr td:nth-child(3)").each(function(){
+                Eng.push(parseInt($(this).text()));
+            });
+            $("tbody tr td:nth-child(4)").each(function(){
+                Math.push(parseInt($(this).text()));
+            });
+            $("tbody tr td:nth-child(5)").each(function(){
+                Phy.push(parseInt($(this).text()));
+            });
+
+
+
+            for(var i=0;i<Eng.length;i++){
+                EngSum+=Eng[i];
+                MathSum+=Math[i];
+                PhySum+=Phy[i];
+            }
+
+            EngAve = EngSum/(Eng.length);
+            MathAve = MathSum/(Eng.length);
+            PhyAve = PhySum/(Eng.length);
+
+            Highcharts.chart('container', {
+                title: {
+                    text: 'Student Mark Average'
+                },
+                chart: {
+                    type: 'column'
+                },
+                xAxis: {
+                    type: 'category'
+                },
+                yAxis: {
+                    title: {
+                        text: 'Number'
+                    }
+                },
+                series: [{
+                    name: 'Average',
+                    colorByPoint: true,
+                    data:[{
+                        name: 'English',
+                        y: EngAve
+                    }, {
+                        name: 'Math',
+                        y: MathAve
+                    }, {
+                        name: 'Physics',
+                        y: PhyAve
+                    }]
+                }]
+            })
+        })
+    </script>
 </div>
 </body>
 </html>

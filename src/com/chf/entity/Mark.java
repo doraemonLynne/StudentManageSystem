@@ -7,7 +7,11 @@ package com.chf.entity;
  */
 public class Mark
 {
+    private Integer id;
+
     private Integer stuId;
+
+    private String stuName;
 
     private Integer markEng;
 
@@ -15,10 +19,24 @@ public class Mark
 
     private Integer markPhy;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public Integer getStuId() { return stuId; }
 
     public void setStuId(Integer stuId) {
         this.stuId = stuId;
+    }
+
+    public String getStuName() { return stuName; }
+
+    public void setStuName(String stuName) {
+        this.stuName = stuName;
     }
 
     public Integer getMarkEng() {
@@ -42,4 +60,5 @@ public class Mark
     public void setMarkPhy(Integer markPhy) {
         this.markPhy = markPhy;
     }
+
 }

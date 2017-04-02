@@ -78,7 +78,7 @@
     </div>
     <div class="row">
         <div class="col-md-6 col-md-push-3">
-            <p class="lead"><a href="index.jsp">返回首页</a></p>
+            <p class="lead"><a href="viewMark.jsp">返回首页</a></p>
         </div>
     </div>
 </div>

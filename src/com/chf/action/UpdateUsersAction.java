@@ -13,6 +13,7 @@ import com.chf.entity.User;
 import com.chf.service.UserService;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /** 
  * ClassName:UpdateUserAction <br/> 
@@ -36,6 +37,9 @@ public class UpdateUsersAction extends Action {
 		userService=new UserService();
 		User uuser=new User();
 		uuser=this.userService.findUserByUserName(userName);
+        List<User> users=userService.findUsers();
+        request.setAttribute("users",users);
+
         if(uuser.getRole()==2){
             return "updateUsers.jsp";
         }

@@ -6,6 +6,9 @@
 <link rel="stylesheet" type="text/css" href="css/commonUI.css">
 <script type="text/javascript" src="js/move.js"></script>
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/sorttable.js"></script>
+<script type="text/javascript" src="js/highcharts.js"></script>
+<script type="text/javascript" src="js/exporting.js"></script>
 <script type="text/javascript">
     function hasClass(el, className) {
         if (el.classList)
@@ -134,11 +137,11 @@
         </div>
         <div class="m-user f-fr f-cb">
             <i class="fa fa-search fa-2x f-fl"></i>
-            <div class="m-user-details f-fr">
+            <div class="m-user-details f-fr" id="user-dropdown">
                 <img src="images/portrait.png" style="width: 50px;height: 50px;">
                 <b><% out.println(session.getAttribute("UserName")); %></b>
                 <strong id="user-role" style="display: none;"><% out.println(session.getAttribute("Role")); %></strong>
-                <span class="fa fa-caret-down fa-2x" id="user-dropdown"></span>
+                <span class="fa fa-caret-down fa-2x"></span>
             </div>
             <div class="m-user-logout" id="user-logout">
                 <i class="fa fa-caret-up fa-2x"></i>

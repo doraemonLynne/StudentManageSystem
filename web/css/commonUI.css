@@ -53,6 +53,7 @@ body{
     margin-top: 7.5px;
     padding: 0 5px;
     color: #444;
+    cursor: pointer;
 }
 
 .m-user .m-user-details b{
