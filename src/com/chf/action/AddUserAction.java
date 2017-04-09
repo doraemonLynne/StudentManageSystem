@@ -47,7 +47,9 @@ public class AddUserAction extends Action {
         auser.setRole(parseInt(role));
         auser.setRoleId(parseInt(roleId));
 		this.userService.addUser(auser);
-		return "success.jsp";
+        List<User> users=userService.findUsers();
+        request.setAttribute("users",users);
+        return "updateUsers.jsp";
 	}
 
 }

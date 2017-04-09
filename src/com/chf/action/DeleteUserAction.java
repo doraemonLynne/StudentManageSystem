@@ -12,6 +12,9 @@ package com.chf.action;
 import com.chf.entity.User;
 import com.chf.service.UserService;
 
+import java.util.List;
+
+
 /** 
  * ClassName:DeleteUserAction <br/> 
  * Function: TODO ADD FUNCTION. <br/> 
@@ -30,12 +33,14 @@ public class DeleteUserAction extends Action{
 	@Override
 	public String execute()
 	{
-		userName=request.getParameter("username");
+        userName = request.getParameter("userName");
 		userService=new UserService();
 		User duser=new User();
 		duser.setUserName(userName);
 		this.userService.deleteUser(duser);
-		return "success.jsp";
+        List<User> users=userService.findUsers();
+        request.setAttribute("users",users);
+        return "updateUsers.jsp";
 	}
 }
  

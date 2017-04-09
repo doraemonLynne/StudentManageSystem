@@ -14,9 +14,11 @@
     <h2 class="content-title">Update Users</h2>
     <div class="opeBtns">
         <a href="#" id="addUser">Add</a>
+        <a href="deleteUser.action" id="delUser">Delete</a>
     </div>
     <table class="resultsTable sortable">
         <tr>
+            <th></th>
             <th>UserName</th>
             <th>Password</th>
             <th>role</th>
@@ -24,6 +26,7 @@
         </tr>
         <c:forEach var="user" items="${users}">
             <tr>
+                <td><input type="checkbox" value=${user.userName}></td>
                 <td>${user.userName}</td>
                 <td>${user.password}</td>
                 <td>${user.role}</td>
@@ -48,7 +51,12 @@
                 </div>
                 <div class="msgInp">
                     <label for="role">Role</label>
-                    <input type="text" id="role" name="role" placeholder="Role" required="required" maxlength="50">
+                    <%--<input type="text" id="role" name="role" placeholder="Role" required="required" maxlength="50">--%>
+                    <select name="role" id="role">
+                        <option value="0" selected>0 Student</option>
+                        <option value="1">1 Teacher</option>
+                        <option value="2">2 Manager</option>
+                    </select>
                 </div>
                 <div class="msgInp">
                     <label for="roleId">RoleID</label>
@@ -62,6 +70,29 @@
         </div>
     </div>
     <script type="text/javascript" src="js/addUser.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#delUser").click(function(){
+//                var checkedUserName = [];
+//                $.each($("input[type=checkbox]:checked"), function(){
+//                    checkedUserName.push($(this).val());
+//                });
+                if($("input[type=checkbox]").is(":checked")==false){
+                    alert("Please choose one record!");
+                   $(this).href="#";
+                }
+                var checkedUserName=$("input[type=checkbox]:checked").val();
+                $.ajax({
+                    type: "POST",
+                    url: "deleteUser.action",
+                    data:{
+                        userName: checkedUserName,
+                    },
+                    dataType: "json"
+                });
+            });
+        })
+    </script>
 </div>
 </body>
 </html>

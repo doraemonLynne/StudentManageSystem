@@ -186,7 +186,7 @@
         <div class="sec-menu">
             <a href="viewMark.action">View Mark</a>
             <a href="updateMark.action">Update Mark</a>
-            <a href="updateUsers.action">Update Users</a>
+            <a href="viewUser.action">Update Users</a>
         </div>
     </div>
 </div>

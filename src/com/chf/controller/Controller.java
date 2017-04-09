@@ -154,8 +154,8 @@ public class Controller implements Filter
                         dispatcher.forward(request,response);
                         break;
                     }
-                    case "/updateUsers":{
-                        action=new UpdateUsersAction();
+                    case "/viewUser":{
+                        action=new ViewUserAction();
                         action.setRequest(request);
                         action.setResponse(response);
                         String result=action.execute();
