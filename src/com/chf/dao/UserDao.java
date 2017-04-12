@@ -17,8 +17,11 @@ public class UserDao {
 		StringBuffer sql = new StringBuffer();
 		int i = 0;
 		try {
-			sql.append("UPDATE user SET password='" + user.getPassword() + "' ");
-			sql.append("WHERE username='" + user.getUserName() + "';");
+			sql.append("UPDATE user SET password='" + user.getPassword() + "',");
+            sql.append("role='" + user.getRole() + "',");
+            sql.append("roleId='" + user.getRoleId() + "',");
+            sql.append("username='" + user.getUserName() + "'");
+			sql.append("WHERE id='" + user.getId() + "';");
 
 			i = DBUtil.executeUpdateInsertDelete(sql.toString());
 		} catch (Exception ex) {

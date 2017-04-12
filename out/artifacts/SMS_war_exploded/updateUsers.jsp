@@ -15,10 +15,12 @@
     <div class="opeBtns">
         <a href="#" id="addUser">Add</a>
         <a href="deleteUser.action" id="delUser">Delete</a>
+        <a href="#" id="updateUser">Update</a>
     </div>
     <table class="resultsTable sortable">
         <tr>
             <th></th>
+            <th hidden>UserId</th>
             <th>UserName</th>
             <th>Password</th>
             <th>role</th>
@@ -27,10 +29,11 @@
         <c:forEach var="user" items="${users}">
             <tr>
                 <td><input type="checkbox" value=${user.userName}></td>
-                <td>${user.userName}</td>
-                <td>${user.password}</td>
-                <td>${user.role}</td>
-                <td>${user.roleId}</td>
+                <td hidden class="tdUsrId">${user.id}</td>
+                <td class="tdUsrName">${user.userName}</td>
+                <td class="tdPwd">${user.password}</td>
+                <td class="tdRole">${user.role}</td>
+                <td class="tdRoleId">${user.roleId}</td>
             </tr>
         </c:forEach>
     </table>
@@ -69,7 +72,47 @@
             </form>
         </div>
     </div>
+    <div class="updateMsg-popover theme-popover">
+        <div class="theme-poptit">
+            <a href="javascript:void(0);" title="关闭" class="popclose"><i class="fa fa-times fa-2x"></i></a>
+            <h3>Update User</h3>
+        </div>
+        <div class="theme-popbod dform m-pop">
+            <form action="updateUser.action" method="post" id="updateForm">
+                <div class="msgInp" hidden>
+                    <label for="userId">UserId</label>
+                    <input type="text" id="userId" name="userId" placeholder="userId" required="required" maxlength="50">
+                </div>
+                <div class="msgInp">
+                    <label for="updateuserName">UserName</label>
+                    <input type="text" id="updateuserName" name="userName" placeholder="UserName" required="required" maxlength="50">
+                </div>
+                <div class="msgInp">
+                    <label for="updatepassword">Password</label>
+                    <input type="text" id="updatepassword" name="password" placeholder="Password" required="required" maxlength="50">
+                </div>
+                <div class="msgInp">
+                    <label for="updaterole">Role</label>
+                    <%--<input type="text" id="role" name="role" placeholder="Role" required="required" maxlength="50">--%>
+                    <select name="role" id="updaterole">
+                        <option value="0">0 Student</option>
+                        <option value="1">1 Teacher</option>
+                        <option value="2">2 Manager</option>
+                    </select>
+                </div>
+                <div class="msgInp">
+                    <label for="updateroleId">RoleID</label>
+                    <input type="text" id="updateroleId" name="roleId" placeholder="RoleId" required="required" maxlength="50">
+                </div>
+                <div class="msgBtns">
+                    <button type="submit" id="updatemsgSub" class="subBtn">Submit</button>
+                    <button type="button" id="updatemsgCancel" class="cancelBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <script type="text/javascript" src="js/addUser.js"></script>
+    <script type="text/javascript" src="js/updateUser.js"></script>
     <script type="text/javascript">
         $(function(){
             $("#delUser").click(function(){

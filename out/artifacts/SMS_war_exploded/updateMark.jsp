@@ -14,6 +14,8 @@
     <h2 class="content-title">Update Mark</h2>
     <table class="resultsTable sortable">
         <tr>
+            <th></th>
+            <th hidden>MarkId</th>
             <th>Student Id</th>
             <th>Student Name</th>
             <th>English</th>
@@ -22,6 +24,8 @@
         </tr>
         <c:forEach var="mark" items="${marks}">
             <tr>
+                <td><input type="checkbox" value=${mark.id}></td>
+                <td hidden class="tdMarkId">${mark.id}</td>
                 <td>${mark.stuId}</td>
                 <td>${mark.stuName}</td>
                 <td>${mark.markEng}</td>
@@ -43,13 +47,13 @@
             var MathAve = 0;
             var PhyAve = 0;
 
-            $("tbody tr td:nth-child(3)").each(function(){
+            $("tbody tr td:nth-child(5)").each(function(){
                 Eng.push(parseInt($(this).text()));
             });
-            $("tbody tr td:nth-child(4)").each(function(){
+            $("tbody tr td:nth-child(6)").each(function(){
                 Math.push(parseInt($(this).text()));
             });
-            $("tbody tr td:nth-child(5)").each(function(){
+            $("tbody tr td:nth-child(7)").each(function(){
                 Phy.push(parseInt($(this).text()));
             });
 

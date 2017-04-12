@@ -52,7 +52,7 @@ table tbody {
 .content-title{
     font-size: 20px;
     display: inline-block;
-    margin: 0 0 20px 20px;
+    margin: 0 0 20px 0;
 }
 .showGraph{
     width:90%;
@@ -168,4 +168,38 @@ table tbody {
 .m-pop form .cancelBtn {
     background: #999;
     float: right;
+}
+.opeBtns a{
+    display: inline-block;
+    width:100px;
+    height:40px;
+    line-height:40px;
+    margin-bottom: 20px;
+    background: #337ab7;
+    color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+}
+.opeBtns a:hover,.opeBtns a:visited{
+    color:#eee;
+}
+.resultsTable tr th{
+    position: relative;
+}
+.resultsTable tr th:before,.resultsTable tr th:after{
+    position: absolute;
+    right:6px;
+    top:24px;
+    display: inline-block;
+    content: "\f0dd";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+.resultsTable tr th:after{
+    content: "\f0de";
+}
+.resultsTable tr th:first-child:before,.resultsTable tr th:first-child:after{
+    content: '';
 }

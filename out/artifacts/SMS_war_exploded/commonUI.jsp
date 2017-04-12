@@ -111,7 +111,7 @@
         else if(onPage=="updateMark.action"){
             onPageFlag=1;
         }
-        else if(onPage=="updateUsers.action"){
+        else{
             onPageFlag=2;
         }
 

@@ -15,6 +15,8 @@ import java.util.List;
 import com.chf.entity.User;
 import com.chf.service.UserService;
 
+import static java.lang.Integer.parseInt;
+
 /** 
  * ClassName:UpdateUserAction <br/> 
  * Function: TODO ADD FUNCTION. <br/> 
@@ -28,20 +30,30 @@ import com.chf.service.UserService;
 public class UpdateUserAction extends Action {
 	private static final long serialVersionUID = 4878247652427455524L;
 	private UserService userService;
+    private String userId;
 	private String userName;
 	private String passWord;
+    private String role;
+    private String roleId;
 	@Override
 	public String execute()
 	{
-		userName=request.getParameter("username");
+        userId=request.getParameter("userId");
+		userName=request.getParameter("userName");
 		passWord=request.getParameter("password");
+        role=request.getParameter("role");
+        roleId=request.getParameter("roleId");
 		userService=new UserService();
 		User uuser=new User();
-		uuser=this.userService.findUserByUserName(userName);
-		//uuser.setUserName(userName);
-		uuser.setPassword(passWord);
+        uuser.setId(parseInt(userId));
+        uuser.setUserName(userName);
+        uuser.setPassword(passWord);
+        uuser.setRole(parseInt(role));
+        uuser.setRoleId(parseInt(roleId));
 		this.userService.updateUser(uuser);
-		return "success.jsp";
+        List<User> users=userService.findUsers();
+        request.setAttribute("users",users);
+        return "updateUsers.jsp";
 	}
 }
  
