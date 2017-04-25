@@ -48,8 +48,13 @@ public class LoginAction extends Action {
         request.setAttribute("marks",marks);
         User luser=new User();
         luser=this.userService.findUserByUserName(userName);
+
+        GreetFactory greetFactory = new GreetFactory();
+        Greet greet = greetFactory.getShow(luser.getRole());
+
         session.setAttribute("UserName",luser.getUserName());
         session.setAttribute("Role",luser.getRole());
+        session.setAttribute("RoleName",greet.show());
 
         if(luser!=null){
             if((luser.getPassword()).equals(passWord)){

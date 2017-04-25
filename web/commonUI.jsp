@@ -190,3 +190,6 @@
         </div>
     </div>
 </div>
+<div class="greet">
+<a>Welcome! You are <b><% out.println(session.getAttribute("RoleName")); %></b></a>
+</div>

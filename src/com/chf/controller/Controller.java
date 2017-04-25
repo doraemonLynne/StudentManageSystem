@@ -118,7 +118,6 @@ public class Controller implements Filter
                         break;
                     }
                     case "/login":{
-
                         action=new LoginAction();
                         action.setRequest(request);
                         action.setResponse(response);
@@ -163,8 +162,15 @@ public class Controller implements Filter
                         dispatcher.forward(request,response);
                         break;
                     }
-
-
+//                    case "/greet":{
+//                        action=new GreetAction();
+//                        action.setRequest(request);
+//                        action.setResponse(response);
+//                        String result=action.execute();
+//                        dispatcher=request.getRequestDispatcher(result);
+//                        dispatcher.forward(request,response);
+//                        break;
+//                    }
                 }
             }
             catch(Exception err)

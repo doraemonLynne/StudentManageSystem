@@ -35,12 +35,12 @@ public class ViewUserAction extends Action {
         HttpSession session = request.getSession();
 		userName= (String) session.getAttribute("UserName");
 		userService=new UserService();
-		User uuser=new User();
-		uuser=this.userService.findUserByUserName(userName);
+		User user=new User();
+        user=this.userService.findUserByUserName(userName);
         List<User> users=userService.findUsers();
         request.setAttribute("users",users);
 
-        if(uuser.getRole()==2){
+        if(user.getRole()==2){
             return "updateUsers.jsp";
         }
         return "noPriviledge.jsp";

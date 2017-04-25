@@ -203,3 +203,16 @@ table tbody {
 .resultsTable tr th:first-child:before,.resultsTable tr th:first-child:after{
     content: '';
 }
+.greet{
+    position: absolute;
+    right: 17px;
+    top: 85px;
+    font-family: "Chalkboard SE";
+    font-size: 20px;
+}
+.greet a{
+    color: rgb(108, 108, 96);
+}
+.greet b{
+    color: rgb(255, 108, 96);
+}

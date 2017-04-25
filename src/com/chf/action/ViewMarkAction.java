@@ -18,13 +18,13 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /** 
- * ClassName:UpdateUserAction <br/> 
+ * ClassName:ViewMarkAction <br/>
  * Function: TODO ADD FUNCTION. <br/> 
  * Reason:   TODO ADD REASON. <br/> 
- * Date:     2014年12月17日 上午10:35:40 <br/> 
- * @author   zhangzhaoyu 
+ * Date:     2017年04月24日 上午10:35:40 <br/>
+ * @author   Shi Linyong
  * @version   
- * @since    JDK 1.7 
+ * @since    JDK 1.8
  * @see       
  */
 public class ViewMarkAction extends Action {
@@ -39,12 +39,12 @@ public class ViewMarkAction extends Action {
         userName= (String) session.getAttribute("UserName");
 		userService=new UserService();
         markService=new MarkService();
-		User uuser=new User();
-		uuser=this.userService.findUserByUserName(userName);
+		User user=new User();
+		user=this.userService.findUserByUserName(userName);
         List<Mark> marks=markService.findMark();
         request.setAttribute("marks",marks);
 
-        if(uuser.getRole()==2||uuser.getRole()==1||uuser.getRole()==0){
+        if(user.getRole()==2||user.getRole()==1||user.getRole()==0){
             return "viewMark.jsp";
         }
         return "noPriviledge.jsp";

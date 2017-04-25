@@ -39,12 +39,12 @@ public class UpdateMarkAction extends Action {
         userName= (String) session.getAttribute("UserName");
         userService=new UserService();
         markService=new MarkService();
-        User uuser=new User();
-        uuser=this.userService.findUserByUserName(userName);
+        User user=new User();
+        user=this.userService.findUserByUserName(userName);
         List<Mark> marks=markService.findMark();
         request.setAttribute("marks",marks);
 
-        if(uuser.getRole()==2||uuser.getRole()==1){
+        if(user.getRole()==2||user.getRole()==1){
             return "updateMark.jsp";
         }
         return "noPriviledge.jsp";
