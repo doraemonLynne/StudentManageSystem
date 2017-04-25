@@ -105,10 +105,13 @@
         var aRightDis = oMenu.getElementsByClassName('fa-caret-right');
         var onPageFlag=0;
 
-        if(onPage=="viewMark.action"){
+        if(onPage.indexOf("viewMark.action")!=-1){
             onPageFlag=0;
         }
-        else if(onPage=="updateMark.action"){
+        else if(onPage.indexOf("login.action")!=-1){
+            onPageFlag=0;
+        }
+        else if(onPage.indexOf("updateMark.action")!=-1){
             onPageFlag=1;
         }
         else{
