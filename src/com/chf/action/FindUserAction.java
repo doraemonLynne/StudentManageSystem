@@ -7,9 +7,6 @@ import com.chf.service.UserService;
 
 public class FindUserAction extends Action
 {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4878247652427455524L;
 	private UserService userService;
 	private String userName;

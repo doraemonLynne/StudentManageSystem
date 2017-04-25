@@ -53,24 +53,6 @@ public class Controller implements Filter
                         dispatcher.forward(request,response);
                         break;
                     }
-                    case "/toFindUser":{
-                        action=new ToFindUserAction();
-                        action.setRequest(request);
-                        action.setResponse(response);
-                        String result=action.execute();
-                        dispatcher=request.getRequestDispatcher(result);
-                        dispatcher.forward(request,response);
-                        break;
-                    }
-                    case "/toAddUser":{
-                        action=new ToAddUserAction();
-                        action.setRequest(request);
-                        action.setResponse(response);
-                        String result=action.execute();
-                        dispatcher=request.getRequestDispatcher(result);
-                        dispatcher.forward(request,response);
-                        break;
-                    }
                     case "/addUser":{
                         action=new AddUserAction();
                         action.setRequest(request);
@@ -80,27 +62,8 @@ public class Controller implements Filter
                         dispatcher.forward(request,response);
                         break;
                     }
-                    case "/toDeleteUser":{
-                        action=new ToDeleteUserAction();
-                        action.setRequest(request);
-                        action.setResponse(response);
-                        String result=action.execute();
-                        dispatcher=request.getRequestDispatcher(result);
-                        dispatcher.forward(request,response);
-                        break;
-                    }
                     case "/deleteUser":{
                         action=new DeleteUserAction();
-                        action.setRequest(request);
-                        action.setResponse(response);
-                        String result=action.execute();
-                        dispatcher=request.getRequestDispatcher(result);
-                        dispatcher.forward(request,response);
-                        break;
-                    }
-
-                    case "/toUpdateUser":{
-                        action=new ToUpdateUserAction();
                         action.setRequest(request);
                         action.setResponse(response);
                         String result=action.execute();
@@ -162,15 +125,6 @@ public class Controller implements Filter
                         dispatcher.forward(request,response);
                         break;
                     }
-//                    case "/greet":{
-//                        action=new GreetAction();
-//                        action.setRequest(request);
-//                        action.setResponse(response);
-//                        String result=action.execute();
-//                        dispatcher=request.getRequestDispatcher(result);
-//                        dispatcher.forward(request,response);
-//                        break;
-//                    }
                 }
             }
             catch(Exception err)

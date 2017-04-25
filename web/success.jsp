@@ -10,8 +10,8 @@
 <body>
 <jsp:include page="commonUI.jsp" />
 <div class="g-content">
-    祝贺你，操作成功!
-    <a href="javascript:history.back();">返回</a>
+    Success!
+    <a href="javascript:history.back();">Return</a>
 </div>
 </body>
 </html>

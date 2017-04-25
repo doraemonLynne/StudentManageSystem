@@ -73,12 +73,12 @@
     <div class="row">
         <div class="col-md-12">
             <i class="fa fa-smile-o"></i>
-            <h1>注销成功!</h1>
+            <h1>Logout Succeed!</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 col-md-push-3">
-            <p class="lead"><a href="login.jsp">返回登录界面</a></p>
+            <p class="lead"><a href="login.jsp">return login page!</a></p>
         </div>
     </div>
 </div>

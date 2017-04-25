@@ -73,12 +73,12 @@
     <div class="row">
         <div class="col-md-12">
             <i class="fa fa-frown-o"></i>
-            <h1>权限不够!</h1>
+            <h1>You have no privilege!</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 col-md-push-3">
-            <p class="lead"><a href="viewMark.jsp">返回首页</a></p>
+            <p class="lead"><a href="viewMark.jsp">Return Main Page!</a></p>
         </div>
     </div>
 </div>

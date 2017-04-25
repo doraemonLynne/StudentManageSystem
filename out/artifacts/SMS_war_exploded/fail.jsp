@@ -73,12 +73,12 @@
     <div class="row">
         <div class="col-md-12">
             <i class="fa fa-frown-o"></i>
-            <h1>出错啦!</h1>
+            <h1>Wrong!</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 col-md-push-3">
-            <p class="lead"><a href="login.jsp">返回登录界面</a></p>
+            <p class="lead"><a href="login.jsp">Return Login page!</a></p>
         </div>
     </div>
 </div>
