@@ -141,7 +141,6 @@
             <h2>S<b>M</b>System</h2>
         </div>
         <div class="m-user f-fr f-cb">
-            <i class="fa fa-search fa-2x f-fl"></i>
             <div class="m-user-details f-fr" id="user-dropdown">
                 <img src="images/portrait.png" style="width: 50px;height: 50px;">
                 <b><% out.println(session.getAttribute("UserName")); %></b>

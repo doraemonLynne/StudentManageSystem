@@ -212,7 +212,21 @@ table tbody {
 }
 .greet a{
     color: rgb(108, 108, 96);
+    text-decoration: none;
+}
+.greet a:visited{
+    text-decoration: none;
 }
 .greet b{
     color: rgb(255, 108, 96);
+}
+.searchBox{
+    position: relative;
+    margin-bottom: 30px;
+}
+.searchBox .searchBoxInp{
+    border: 1px solid #aaa;
+}
+.showGrade{
+    margin-bottom: 30px;
 }

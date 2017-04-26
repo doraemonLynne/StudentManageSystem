@@ -6,6 +6,8 @@ import com.chf.entity.Mark;
 import com.chf.service.MarkService;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ViewMarkAction extends Action {
@@ -13,6 +15,9 @@ public class ViewMarkAction extends Action {
 	private UserService userService;
     private MarkService markService;
 	private String userName;
+    private String subject;
+    private String showMark;
+    private String stuName;
 	@Override
 	public String execute()
 	{
@@ -24,6 +29,31 @@ public class ViewMarkAction extends Action {
 		user=this.userService.findUserByUserName(userName);
         List<Mark> marks=markService.findMark();
         request.setAttribute("marks",marks);
+
+        stuName=request.getParameter("stuName");
+        subject=request.getParameter("subject");
+
+        ShowingGrade showing = new ShowingGrade();
+
+        if("English".equalsIgnoreCase(subject)){
+            Grade english = new GradeEng();
+            showing.add(english);
+        }
+        else if("Math".equalsIgnoreCase(subject)){
+            Grade math = new GradeMath();
+            showing.add(math);
+        }
+        else{
+            Grade phy = new GradePhy();
+            showing.add(phy);
+        }
+
+        showMark = showing.showGrade();
+
+        String grade;
+        grade= this.markService.findMarkNameByUserName(stuName,showMark);
+
+        request.setAttribute("grade",grade);
 
         if(user.getRole()==2||user.getRole()==1||user.getRole()==0){
             return "viewMark.jsp";

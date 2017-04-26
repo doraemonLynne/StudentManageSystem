@@ -5,7 +5,9 @@ import com.chf.entity.User;
 
 import com.chf.dao.MarkDao;
 import com.chf.entity.Mark;
+import com.sun.javafx.binding.StringFormatter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MarkService {
@@ -31,17 +33,10 @@ public class MarkService {
 
         return list;
     }
-	public void addUser(User auser){
-		this.userDao.insert(auser);
-	}
-	public void deleteUser(User duser){
-		this.userDao.delete(duser);
-	}
-	public User findUserByUserName(String userName){
-		User user=userDao.findByUserName(userName);
-		return user;
-	}
-	public void updateUser(User uuser){
-		this.userDao.update(uuser);
+
+	public String findMarkNameByUserName(String userName, String showMark){
+        String grade;
+        grade=markDao.findMarkByUserName(userName,showMark);
+		return grade;
 	}
 }

@@ -86,29 +86,21 @@ public class MarkDao {
 		return user;
 	}
 	
-	public User findByUserName(String userName) {
-		User user = null;
+	public String findMarkByUserName(String userName, String showMark) {
 		StringBuffer sql = new StringBuffer();
-		sql.append("select * from user where username='" + userName + "';");
+        String grade = null;
+		sql.append("select "+showMark+" from mark where stuName='"+userName+"';");
 
 		try {
-			ResultSet set = DBUtil.executeQuery(sql.toString());
-			
-			while (set.next()) {
-				
-				user = new User();
-				user.setId(set.getInt("id"));
-				user.setUserName(set.getString("username"));
-				user.setPassword(set.getString("password"));
-                user.setRole(set.getInt("role"));
-                user.setRoleId(set.getInt("roleId"));
-
-				break;
-			}
+            ResultSet set = DBUtil.executeQuery(sql.toString());
+            while (set.next()) {
+                grade=set.getString(showMark);
+                break;
+            }
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-		return user;
+        return grade;
 	}
 	
 	/**

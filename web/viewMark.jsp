@@ -14,6 +14,12 @@
 <jsp:include page="commonUI.jsp" />
 <div class="g-content">
     <h2 class="content-title">View Mark</h2>
+    <form action="viewMark.action" class="searchBox">
+        StuName:<input type="text" name="stuName" class="searchBoxInp">
+        Subject:<input type="text" name="subject" class="searchBoxInp">
+        <input type="submit" value="search">
+    </form>
+    <div class="showGrade"><i>Grade:<% out.println(request.getAttribute("grade")); %></i></div>
     <table class="resultsTable sortable">
         <tr>
             <th></th>
