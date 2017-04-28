@@ -39,7 +39,15 @@ public class ShowingGrade implements Grade {
                 }
             }
         }
-        return grade1+","+grade2+","+grade3;
+        if(grades.size()==1){
+            return grade1;
+        }
+        else if(grades.size()==2){
+            return grade1+","+grade2;
+        }
+        else{
+            return grade1+","+grade2+","+grade3;
+        }
     }
 
     //adding shape to drawing

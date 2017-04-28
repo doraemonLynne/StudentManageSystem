@@ -15,11 +15,13 @@
 <div class="g-content">
     <h2 class="content-title">View Mark</h2>
     <form action="viewMark.action" class="searchBox">
-        StuName:<input type="text" name="stuName" class="searchBoxInp">
+        <label>StuName</label><input type="text" name="stuName" class="searchBoxInp">
         <div class="searchBoxCheck">
-            English:<input type="checkbox" name="subject" value="english">
-            Math:<input type="checkbox" name="subject" value="math">
-            Physics:<input type="checkbox" name="subject" value="physics">
+            <label>English</label><input type="checkbox" name="subject" value="english">
+            <br>
+            <label>Math</label><input type="checkbox" name="subject" value="math">
+            <br>
+            <label>Physics</label><input type="checkbox" name="subject" value="physics">
         </div>
         <input type="submit" value="search" class="searchBoxSub">
     </form>

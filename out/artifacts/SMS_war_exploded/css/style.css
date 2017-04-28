@@ -224,7 +224,12 @@ table tbody {
     position: relative;
     margin-bottom: 30px;
 }
+.searchBox label{
+    width:70px;
+    text-align: left;
+}
 .searchBox .searchBoxInp{
+    display: block;
     border:1px solid #aaaaaa;
 }
 .searchBox .searchBoxCheck{

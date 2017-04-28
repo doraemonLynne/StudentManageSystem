@@ -39,21 +39,28 @@ public class ViewMarkAction extends Action {
         Grade math = new GradeMath();
         Grade physics = new GradePhy();
 
-        for(int i=0;i<subject.length;i++) {
-            switch (subject[i]) {
-                case "english": {
-                    showing.add(english);
-                    break;
-                }
-                case "math": {
-                    showing.add(math);
-                    break;
-                }
-                case "physics": {
-                    showing.add(physics);
-                    break;
+        if (subject!=null){
+            for(int i=0;i<subject.length;i++) {
+                switch (subject[i]) {
+                    case "english": {
+                        showing.add(english);
+                        break;
+                    }
+                    case "math": {
+                        showing.add(math);
+                        break;
+                    }
+                    case "physics": {
+                        showing.add(physics);
+                        break;
+                    }
                 }
             }
+        }
+        else{
+            showing.add(english);
+            showing.add(math);
+            showing.add(physics);
         }
 
         showMark = showing.showGrade(stuName);

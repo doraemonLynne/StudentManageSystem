@@ -23,21 +23,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ViewMarkAction.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ViewMarkAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/chf/action/ViewMarkAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+            <state vertical-scroll-proportion="1.4187192">
+              <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShowingGrade.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="viewMark.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/viewMark.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.185185">
+              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.3703704">
+              <caret line="231" column="19" selection-start-line="231" selection-start-column="19" selection-end-line="231" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShowingGrade.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/chf/action/ShowingGrade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9310345">
-              <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#379#386#0" expanded="true" />
@@ -113,11 +133,11 @@
         <option value="$PROJECT_DIR$/src/com/chf/service/MarkService.java" />
         <option value="$PROJECT_DIR$/src/com/chf/action/GradeEng.java" />
         <option value="$PROJECT_DIR$/src/com/chf/action/Grade.java" />
-        <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/web/css/commonUI.css" />
         <option value="$PROJECT_DIR$/web/updateUsers.jsp" />
         <option value="$PROJECT_DIR$/web/js/updateUser.js" />
         <option value="$PROJECT_DIR$/web/viewMark.jsp" />
+        <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/src/com/chf/action/ViewMarkAction.java" />
         <option value="$PROJECT_DIR$/src/com/chf/action/ShowingGrade.java" />
       </list>
@@ -880,12 +900,12 @@
       <workItem from="1493024627771" duration="14575000" />
       <workItem from="1493129269069" duration="9775000" />
       <workItem from="1493219310248" duration="16808000" />
-      <workItem from="1493387918213" duration="13514000" />
+      <workItem from="1493387918213" duration="14720000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137670000" />
+    <option name="totallyTimeSpent" value="138876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="704" extended-state="6" />
@@ -1337,22 +1357,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/viewMark.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36615384">
-          <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39076924">
-          <caret line="233" column="23" selection-start-line="233" selection-start-column="23" selection-end-line="233" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/chf/controller/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5113636">
@@ -1369,22 +1373,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/chf/action/ViewMarkAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/chf/action/ShowingGrade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9310345">
-          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#379#386#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.3703704">
+          <caret line="231" column="19" selection-start-line="231" selection-start-column="19" selection-end-line="231" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/viewMark.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.185185">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/chf/action/ViewMarkAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4187192">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
