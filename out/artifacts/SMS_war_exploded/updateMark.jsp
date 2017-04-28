@@ -12,6 +12,11 @@
 <jsp:include page="commonUI.jsp" />
 <div class="g-content">
     <h2 class="content-title">Update Mark</h2>
+    <div class="opeBtns">
+        <a href="#" id="addMark">Add</a>
+        <a href="deleteMark.action" id="delMark">Delete</a>
+        <a href="#" id="updateMark">Update</a>
+    </div>
     <table class="resultsTable sortable">
         <tr>
             <th></th>
@@ -24,16 +29,113 @@
         </tr>
         <c:forEach var="mark" items="${marks}">
             <tr>
-                <td><input type="checkbox" value=${mark.id}></td>
+                <td><input type="checkbox" value=${mark.stuName}></td>
                 <td hidden class="tdMarkId">${mark.id}</td>
-                <td>${mark.stuId}</td>
-                <td>${mark.stuName}</td>
-                <td>${mark.markEng}</td>
-                <td>${mark.markMath}</td>
-                <td>${mark.markPhy}</td>
+                <td class="tdStuId">${mark.stuId}</td>
+                <td class="tdStuName">${mark.stuName}</td>
+                <td class="tdEnglish">${mark.markEng}</td>
+                <td class="tdMath">${mark.markMath}</td>
+                <td class="tdPhysics">${mark.markPhy}</td>
             </tr>
         </c:forEach>
     </table>
+    <div class="addMsg-popover theme-popover">
+        <div class="theme-poptit">
+            <a href="javascript:void(0);" title="关闭" class="popclose"><i class="fa fa-times fa-2x"></i></a>
+            <h3>Add Mark</h3>
+        </div>
+        <div class="theme-popbod dform m-pop">
+            <form action="addMark.action" method="post" id="msgForm">
+                <div class="msgInp">
+                    <label for="studentId">StudentID</label>
+                    <input type="text" id="studentId" name="studentId" placeholder="StudentID" required="required" maxlength="50">
+                </div>
+                <div class="msgInp">
+                    <label for="studentName">StudentName</label>
+                    <input type="text" id="studentName" name="studentName" placeholder="StudentName" required="required" maxlength="50">
+                </div>
+                <div class="msgInp">
+                    <label for="english">English</label>
+                    <input type="text" id="english" name="english" placeholder="English" required="required" maxlength="50">
+                </div>
+                <div class="msgInp">
+                    <label for="math">Math</label>
+                    <input type="text" id="math" name="math" placeholder="Math" required="required" maxlength="50">
+                </div>
+                <div class="msgInp">
+                    <label for="physics">Physics</label>
+                    <input type="text" id="physics" name="physics" placeholder="physics" required="required" maxlength="50">
+                </div>
+                <div class="msgBtns">
+                    <button type="submit" id="msgSub" class="subBtn">Submit</button>
+                    <button type="button" id="msgCancel" class="cancelBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="updateMsg-popover theme-popover">
+        <div class="theme-poptit">
+            <a href="javascript:void(0);" title="关闭" class="popclose"><i class="fa fa-times fa-2x"></i></a>
+            <h3>Update Mark</h3>
+        </div>
+        <div class="theme-popbod dform m-pop">
+            <form action="updateMarkGrade.action" method="post" id="updateForm">
+                <div class="msgInp" hidden>
+                    <label for="markId">MarkId</label>
+                    <input type="text" id="markId" name="markId" placeholder="markId" required="required" maxlength="50">
+                </div>
+                <div class="msgInp">
+                    <label for="studentId">StudentID</label>
+                    <input type="text" id="updatestudentId" name="studentId" placeholder="StudentID" required="required" maxlength="50">
+                </div>
+                <div class="msgInp">
+                    <label for="studentName">StudentName</label>
+                    <input type="text" id="updatestudentName" name="studentName" placeholder="StudentName" required="required" maxlength="50">
+                </div>
+                <div class="msgInp">
+                    <label for="english">English</label>
+                    <input type="text" id="updateenglish" name="english" placeholder="English" required="required" maxlength="50">
+                </div>
+                <div class="msgInp">
+                    <label for="math">Math</label>
+                    <input type="text" id="updatemath" name="math" placeholder="Math" required="required" maxlength="50">
+                </div>
+                <div class="msgInp">
+                    <label for="physics">Physics</label>
+                    <input type="text" id="updatephysics" name="physics" placeholder="physics" required="required" maxlength="50">
+                </div>
+                <div class="msgBtns">
+                    <button type="submit" id="updatemsgSub" class="subBtn">Submit</button>
+                    <button type="button" id="updatemsgCancel" class="cancelBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/addMark.js"></script>
+    <script type="text/javascript" src="js/updateMark.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#delMark").click(function(){
+//                var checkedUserName = [];
+//                $.each($("input[type=checkbox]:checked"), function(){
+//                    checkedUserName.push($(this).val());
+//                });
+                if($(".resultsTable input[type=checkbox]").is(":checked")==false){
+                    alert("Please choose one record!");
+                    $(this).href="#";
+                }
+                var checkedStuName=$(".resultsTable input[type=checkbox]:checked").val();
+                $.ajax({
+                    type: "POST",
+                    url: "deleteMark.action",
+                    data:{
+                        stuName: checkedStuName,
+                    },
+                    dataType: "json"
+                });
+            });
+        })
+    </script>
     <div id="container" class="showGraph"></div>
     <script type="text/javascript">
         $(function() {

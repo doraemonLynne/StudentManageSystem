@@ -107,6 +107,33 @@ public class Controller implements Filter
                         dispatcher.forward(request,response);
                         break;
                     }
+                    case "/addMark":{
+                        action=new AddMarkAction();
+                        action.setRequest(request);
+                        action.setResponse(response);
+                        String result=action.execute();
+                        dispatcher=request.getRequestDispatcher(result);
+                        dispatcher.forward(request,response);
+                        break;
+                    }
+                    case "/updateMarkGrade":{
+                        action=new UpdateMarkGradeAction();
+                        action.setRequest(request);
+                        action.setResponse(response);
+                        String result=action.execute();
+                        dispatcher=request.getRequestDispatcher(result);
+                        dispatcher.forward(request,response);
+                        break;
+                    }
+                    case "/deleteMark":{
+                        action=new DeleteMarkAction();
+                        action.setRequest(request);
+                        action.setResponse(response);
+                        String result=action.execute();
+                        dispatcher=request.getRequestDispatcher(result);
+                        dispatcher.forward(request,response);
+                        break;
+                    }
                     case "/updateMark":{
                         action=new UpdateMarkAction();
                         action.setRequest(request);

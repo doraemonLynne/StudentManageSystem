@@ -78,7 +78,7 @@ table tbody {
 .theme-popover {
     z-index: 9999;
     position: fixed;
-    top: 40%;
+    top: 30%;
     left: 50%;
     width: 400px;
     margin: -180px 0 0 -220px;

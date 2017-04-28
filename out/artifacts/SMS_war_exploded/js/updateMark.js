@@ -4,9 +4,9 @@
  * @date    2017-04-02 21:31:18
  * @version $Id$
  */
-//update users
+//update marks
 $(function(){
-    $('#updateUser').click(function(){
+    $('#updateMark').click(function(){
         if($(".resultsTable input[type=checkbox]").is(":checked")==false){
             alert("Please choose one record!");
         }
@@ -15,17 +15,19 @@ $(function(){
             $('.updateMsg-popover').slideDown(200);
         }
         var checkedRow=$(".resultsTable input[type=checkbox]:checked").parents("tr");
-        var checkedUserId=checkedRow.find(".tdUsrId").html();
-        var checkedUserName=checkedRow.find(".tdUsrName").html();
-        var checkedPassword=checkedRow.find(".tdPwd").html();
-        var checkedRole=checkedRow.find(".tdRole").html();
-        var checkedRoleId=checkedRow.find(".tdRoleId").html();
+        var checkedMarkId=checkedRow.find(".tdMarkId").html();
+        var checkedStuId=checkedRow.find(".tdStuId").html();
+        var checkedStuName=checkedRow.find(".tdStuName").html();
+        var checkedEnglish=checkedRow.find(".tdEnglish").html();
+        var checkedMath=checkedRow.find(".tdMath").html();
+        var checkedPhysics=checkedRow.find(".tdPhysics").html();
 
-        $('#userId').val(checkedUserId);
-        $('#updateuserName').val(checkedUserName);
-        $('#updatepassword').val(checkedPassword);
-        $('#updaterole').val(checkedRole);
-        $('#updateroleId').val(checkedRoleId);
+        $('#markId').val(checkedMarkId);
+        $('#updatestudentId').val(checkedStuId);
+        $('#updatestudentName').val(checkedStuName);
+        $('#updateenglish').val(checkedEnglish);
+        $('#updatemath').val(checkedMath);
+        $('#updatephysics').val(checkedPhysics);
     });
     $('.updateMsg-popover .theme-poptit .popclose,#updatemsgCancel').click(function(){
         $('.theme-popover-mask').fadeOut(100);
@@ -34,6 +36,8 @@ $(function(){
         $('#updateForm')[1].reset();
         $('#updateForm')[2].reset();
         $('#updateForm')[3].reset();
+        $('#updateForm')[4].reset();
+        $('#updateForm')[5].reset();
     });
 })
  

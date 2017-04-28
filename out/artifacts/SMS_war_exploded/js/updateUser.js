@@ -27,7 +27,7 @@ $(function(){
         $('#updaterole').val(checkedRole);
         $('#updateroleId').val(checkedRoleId);
     });
-    $('.updateMsg-popover .theme-poptit .popclose,#updatemsgCance').click(function(){
+    $('.updateMsg-popover .theme-poptit .popclose,#updatemsgCancel').click(function(){
         $('.theme-popover-mask').fadeOut(100);
         $('.updateMsg-popover').slideUp(200);
         $('#updateForm')[0].reset();

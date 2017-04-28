@@ -9,17 +9,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MarkDao {
-	/**
-	 * �����û�
-	 * @param user������µ��û�
-	 * @return ��������
-	 */
-	public int update(User user) {
+
+	public int update(Mark mark) {
 		StringBuffer sql = new StringBuffer();
 		int i = 0;
 		try {
-			sql.append("UPDATE user SET password='" + user.getPassword() + "' ");
-			sql.append("WHERE username='" + user.getUserName() + "';");
+			sql.append("UPDATE mark SET stuId='" + mark.getStuId() + "',");
+            sql.append("stuName='"+mark.getStuName()+"',");
+            sql.append("English='"+mark.getMarkEng()+"',");
+            sql.append("Math='"+mark.getMarkMath()+"',");
+            sql.append("Physics='"+mark.getMarkPhy()+"'");
+            sql.append("WHERE id='" + mark.getId() + "';");
 
 			i = DBUtil.executeUpdateInsertDelete(sql.toString());
 		} catch (Exception ex) {
@@ -28,64 +28,27 @@ public class MarkDao {
 		return i;
 	}
 
-	/**
-	 * ɾ���û�
-	 * @param user����ɾ����û�
-	 * @return ��������
-	 */
-	public int delete(User user) {
+	public int delete(Mark mark) {
 		StringBuffer sql = new StringBuffer();
 
-		sql.append("delete from user where username='" + user.getUserName() + "';");
+		sql.append("delete from mark where stuName='" + mark.getStuName() + "';");
 
 		return DBUtil.executeUpdateInsertDelete(sql.toString());
 	}
 
-	/**
-	 * �����û�
-	 * @param user������ӵ��̻�
-	 * @return ��������
-	 */
-	public int insert(User user) {
-		StringBuffer sql = new StringBuffer();
+    public int insert(Mark mark) {
+        StringBuffer sql = new StringBuffer();
 
-		sql.append("insert into user(username,password)");
-		sql.append("values('" + user.getUserName() + "',");
-		sql.append("'" + user.getPassword() + "');");
+        sql.append("insert into mark(stuId,stuName,English,Math,Physics)");
+        sql.append("values('" + mark.getStuId() + "',");
+        sql.append("'" + mark.getStuName() + "',");
+        sql.append("'" + mark.getMarkEng() + "',");
+        sql.append("'" + mark.getMarkMath() + "',");
+        sql.append("'" + mark.getMarkPhy() + "');");
 
-		return DBUtil.executeUpdateInsertDelete(sql.toString());
-	}
+        return DBUtil.executeUpdateInsertDelete(sql.toString());
+    }
 
-	/**
-	 * ���id�����û�
-	 * @param id������ҵ��û�id
-	 * @return ����������û�
-	 */
-	public User findById(int id) {
-		User user = null;
-		StringBuffer sql = new StringBuffer();
-		sql.append("select * from user where id=" + id + ";");
-
-		try {
-			ResultSet set = DBUtil.executeQuery(sql.toString());
-			
-			while (set.next()) {
-				
-				user = new User();
-				user.setId(set.getInt("id"));
-				user.setUserName(set.getString("username"));
-				user.setPassword(set.getString("password"));
-                user.setRole(set.getInt("role"));
-                user.setRoleId(set.getInt("roleId"));
-
-				break;
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		return user;
-	}
-	
 	public String findMarkByUserName(String userName, String showMark) {
 		StringBuffer sql = new StringBuffer();
         String grade = null;
@@ -101,37 +64,6 @@ public class MarkDao {
 			ex.printStackTrace();
 		}
         return grade;
-	}
-	
-	/**
-	 * ����û������
-	 * @param userName������ҵ��û���
-	 * @return ����������û��б�
-	 */
-	public List<User> findByName(String userName){
-		List<User> list = new ArrayList<User>();
-		
-		StringBuffer sql=new StringBuffer();
-		sql.append("SELECT * FROM user WHERE username = '");
-		sql.append(userName);
-		sql.append("';");
-		
-		try{
-			ResultSet set=DBUtil.executeQuery(sql.toString());
-			while(set.next()){
-				User user=new User();
-				user.setId(set.getInt("id"));
-				user.setUserName(set.getString("username"));
-				user.setPassword(set.getString("password"));
-                user.setRole(set.getInt("role"));
-                user.setRoleId(set.getInt("roleId"));
-
-				list.add(user);
-			}
-		}catch(Exception ex){
-			ex.printStackTrace();
-		}
-		return list;
 	}
 
     public List<Mark> findMarkAll(){

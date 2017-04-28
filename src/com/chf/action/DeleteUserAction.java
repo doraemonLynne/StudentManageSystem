@@ -9,7 +9,7 @@ public class DeleteUserAction extends Action{
 	private static final long serialVersionUID = 4878247652427455524L;
 	private UserService userService;
 	private String userName;
-	private String passWord;
+
 	@Override
 	public String execute()
 	{
