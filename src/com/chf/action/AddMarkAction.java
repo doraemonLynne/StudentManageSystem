@@ -12,9 +12,7 @@ import static java.lang.Integer.parseInt;
 
 public class AddMarkAction extends Action {
 	private static final long serialVersionUID = 4878247652427455524L;
-    private UserService userService;
 	private MarkService markService;
-    private String userName;
     private String stuId;
 	private String stuName;
 	private String english;
@@ -23,9 +21,6 @@ public class AddMarkAction extends Action {
 	@Override
 	public String execute()
 	{
-        HttpSession session = request.getSession();
-        userName= (String) session.getAttribute("UserName");
-        userService=new UserService();
         markService=new MarkService();
 
         stuId=request.getParameter("studentId");
