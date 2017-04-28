@@ -7,14 +7,14 @@
 //update users
 $(function(){
     $('#updateUser').click(function(){
-        if($("input[type=checkbox]").is(":checked")==false){
+        if($(".resultsTable input[type=checkbox]").is(":checked")==false){
             alert("Please choose one record!");
         }
         else{
             $('.theme-popover-mask').fadeIn(100);
             $('.updateMsg-popover').slideDown(200);
         }
-        var checkedRow=$("input[type=checkbox]:checked").parents("tr");
+        var checkedRow=$(".resultsTable input[type=checkbox]:checked").parents("tr");
         var checkedUserId=checkedRow.find(".tdUsrId").html();
         var checkedUserName=checkedRow.find(".tdUsrName").html();
         var checkedPassword=checkedRow.find(".tdPwd").html();

@@ -225,7 +225,16 @@ table tbody {
     margin-bottom: 30px;
 }
 .searchBox .searchBoxInp{
-    border: 1px solid #aaa;
+    border:1px solid #aaaaaa;
+}
+.searchBox .searchBoxCheck{
+    margin: 10px 0;
+}
+.searchBox .searchBoxSub{
+    border-radius: 5px;
+    color: #ffffff;
+    background: rgb(255, 108, 96);
+    padding: 5px 20px;
 }
 .showGrade{
     margin-bottom: 30px;

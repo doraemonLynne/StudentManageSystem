@@ -120,11 +120,11 @@
 //                $.each($("input[type=checkbox]:checked"), function(){
 //                    checkedUserName.push($(this).val());
 //                });
-                if($("input[type=checkbox]").is(":checked")==false){
+                if($(".resultsTable input[type=checkbox]").is(":checked")==false){
                     alert("Please choose one record!");
                    $(this).href="#";
                 }
-                var checkedUserName=$("input[type=checkbox]:checked").val();
+                var checkedUserName=$(".resultsTable input[type=checkbox]:checked").val();
                 $.ajax({
                     type: "POST",
                     url: "deleteUser.action",

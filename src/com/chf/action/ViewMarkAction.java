@@ -9,13 +9,14 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class ViewMarkAction extends Action {
 	private static final long serialVersionUID = 4878247652427455524L;
 	private UserService userService;
     private MarkService markService;
 	private String userName;
-    private String subject;
+    private String[] subject;
     private String showMark;
     private String stuName;
 	@Override
@@ -31,29 +32,33 @@ public class ViewMarkAction extends Action {
         request.setAttribute("marks",marks);
 
         stuName=request.getParameter("stuName");
-        subject=request.getParameter("subject");
+        subject=request.getParameterValues("subject");
 
         ShowingGrade showing = new ShowingGrade();
+        Grade english = new GradeEng();
+        Grade math = new GradeMath();
+        Grade physics = new GradePhy();
 
-        if("English".equalsIgnoreCase(subject)){
-            Grade english = new GradeEng();
-            showing.add(english);
+        for(int i=0;i<subject.length;i++) {
+            switch (subject[i]) {
+                case "english": {
+                    showing.add(english);
+                    break;
+                }
+                case "math": {
+                    showing.add(math);
+                    break;
+                }
+                case "physics": {
+                    showing.add(physics);
+                    break;
+                }
+            }
         }
-        else if("Math".equalsIgnoreCase(subject)){
-            Grade math = new GradeMath();
-            showing.add(math);
-        }
-        else{
-            Grade phy = new GradePhy();
-            showing.add(phy);
-        }
 
-        showMark = showing.showGrade();
+        showMark = showing.showGrade(stuName);
 
-        String grade;
-        grade= this.markService.findMarkNameByUserName(stuName,showMark);
-
-        request.setAttribute("grade",grade);
+        request.setAttribute("grade",showMark);
 
         if(user.getRole()==2||user.getRole()==1||user.getRole()==0){
             return "viewMark.jsp";

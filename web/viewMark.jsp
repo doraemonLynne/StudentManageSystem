@@ -16,8 +16,12 @@
     <h2 class="content-title">View Mark</h2>
     <form action="viewMark.action" class="searchBox">
         StuName:<input type="text" name="stuName" class="searchBoxInp">
-        Subject:<input type="text" name="subject" class="searchBoxInp">
-        <input type="submit" value="search">
+        <div class="searchBoxCheck">
+            English:<input type="checkbox" name="subject" value="english">
+            Math:<input type="checkbox" name="subject" value="math">
+            Physics:<input type="checkbox" name="subject" value="physics">
+        </div>
+        <input type="submit" value="search" class="searchBoxSub">
     </form>
     <div class="showGrade"><i>Grade:<% out.println(request.getAttribute("grade")); %></i></div>
     <table class="resultsTable sortable">

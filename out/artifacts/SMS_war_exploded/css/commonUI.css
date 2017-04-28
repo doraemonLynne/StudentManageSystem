@@ -132,6 +132,7 @@ body{
     top: 70px;
     background: #2a3542;
     color: #737B83;
+    z-index:1000;
 }
 .fir-menu{
     width: 140px;

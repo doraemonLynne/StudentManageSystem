@@ -9,13 +9,20 @@
   
 package com.chf.action;
 
-import java.util.ArrayList;
+import com.chf.service.*;
+
 import java.util.List;
 
 public class GradeEng implements Grade {
+    private MarkService markService;
     @Override
-    public String showGrade() {
-        return "English";
+    public String showGrade(String stuName) {
+        String grade;
+        String showMark;
+        showMark = "English";
+        markService=new MarkService();
+        grade = markService.findMarkNameByUserName(stuName,showMark);
+        return grade;
     }
 }
  
