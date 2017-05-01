@@ -5,8 +5,10 @@ import java.util.List;
 
 import com.chf.entity.Mark;
 import com.chf.entity.User;
+
 import com.chf.service.MarkService;
 import com.chf.service.UserService;
+import com.chf.service.CountService;
 
 import javax.servlet.http.HttpSession;
 
@@ -16,6 +18,7 @@ public class LoginAction extends Action {
     private MarkService markService;
     private String userName;
     private String passWord;
+
     @Override
     public String execute()
     {
@@ -39,6 +42,9 @@ public class LoginAction extends Action {
 
         if(luser!=null){
             if((luser.getPassword()).equals(passWord)){
+                CountService countService = CountService.getInstance();
+                String number = countService.getNumber().toString();
+                request.setAttribute("numVisit",number);
                 return "viewMark.jsp";
             }
         }

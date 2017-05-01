@@ -193,5 +193,9 @@
     </div>
 </div>
 <div class="greet">
-<a>Welcome! You are <b><% out.println(session.getAttribute("RoleName")); %></b></a>
+    <a>Welcome! You are <b><% out.println(session.getAttribute("RoleName")); %></b></a>
 </div>
+<div class="greet visitNum">
+    <a>Number of Visit: <b><% out.println(request.getAttribute("numVisit")); %></b></a>
+</div>
+
