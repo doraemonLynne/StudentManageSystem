@@ -50,17 +50,14 @@ public class ShowingGrade implements Grade {
         }
     }
 
-    //adding shape to drawing
     public void add(Grade g){
         this.grades.add(g);
     }
 
-    //removing shape from drawing
     public void remove(Grade g){
         grades.remove(g);
     }
 
-    //removing all the shapes
     public void clear(){
         System.out.println("Clearing all the subjects from ShowingGrade");
         this.grades.clear();

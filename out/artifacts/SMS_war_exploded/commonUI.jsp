@@ -192,10 +192,20 @@
         </div>
     </div>
 </div>
-<div class="greet">
-    <a>Welcome! You are <b><% out.println(session.getAttribute("RoleName")); %></b></a>
-</div>
+
 <div class="greet visitNum">
     <a>Number of Visit: <b><% out.println(request.getAttribute("numVisit")); %></b></a>
+</div>
+<div class="lanBtns">
+    <form action="viewMark.action">
+        <label>Chinese:</label>
+        <input type="radio" name="language" value="Chinese">
+        <label>English:</label>
+        <input type="radio" name="language" value="English">
+        <input type="submit" value="Translate">
+    </form>
+</div>
+<div class="greet">
+    <a><b><% out.println(request.getAttribute("roleLan")); %></b></a>
 </div>
 

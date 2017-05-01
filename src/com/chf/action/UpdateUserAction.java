@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.chf.entity.User;
+import com.chf.service.CountService;
 import com.chf.service.UserService;
 
 import static java.lang.Integer.parseInt;
@@ -34,6 +35,7 @@ public class UpdateUserAction extends Action {
 		this.userService.updateUser(uuser);
         List<User> users=userService.findUsers();
         request.setAttribute("users",users);
+
         return "updateUsers.jsp";
 	}
 }

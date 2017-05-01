@@ -1,21 +1,23 @@
 package com.chf.action;
 
 import com.chf.entity.User;
+import com.chf.service.CountService;
 import com.chf.service.UserService;
 
 import javax.servlet.http.HttpSession;
 
 public class LogoutAction extends Action {
     private static final long serialVersionUID = 4878247652427455524L;
-    private UserService userService;
-    private String userName;
-    private String passWord;
+    private CountService countService;
     @Override
     public String execute()
     {
         HttpSession session = request.getSession();
         session.removeAttribute("UserName");
         session.invalidate();
+
+        countService.releaseInstance();
+
         return "logout.jsp";
     }
 }

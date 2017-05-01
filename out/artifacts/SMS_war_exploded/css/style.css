@@ -250,3 +250,9 @@ table tbody {
 .visitNum{
     top:120px;
 }
+.lanBtns{
+    position: absolute;
+    right: 17px;
+    top: 190px;
+    z-index: 99;
+}

@@ -2,6 +2,7 @@ package com.chf.action;
 
 import com.chf.entity.Mark;
 import com.chf.entity.User;
+import com.chf.service.CountService;
 import com.chf.service.MarkService;
 import com.chf.service.UserService;
 
@@ -15,6 +16,9 @@ public class UpdateMarkAction extends Action {
 	private String userName;
     private Integer NumOfUnmark=0;
     private Integer NumOfMarked=0;
+    private String language;
+    private Integer role;
+    private String roleLan;
 	@Override
 	public String execute()
 	{
@@ -35,11 +39,31 @@ public class UpdateMarkAction extends Action {
             }
         }
 
+        //show greet[adapter pattern,factory pattern]
+        role=user.getRole();
+        language=request.getParameter("language");
+        if (language==null){
+            language="English";
+        }
+        GreetAdapter greetAdapter = new GreetAdapterImp();
+        if(language!=null){
+            if (language.equalsIgnoreCase("Chinese")){
+                roleLan=greetAdapter.GreetChineseShow(role);
+            }
+            else if(language.equalsIgnoreCase("English")){
+                roleLan=greetAdapter.GreetEnglishShow(role);
+            }
+        }
+        request.setAttribute("roleLan",roleLan);
+
         request.setAttribute("marks",marks);
         request.setAttribute("NumOfUnmark",NumOfUnmark);
         request.setAttribute("NumOfMarked",NumOfMarked);
 
         if(user.getRole()==2||user.getRole()==1){
+            CountService countService = CountService.getInstance();
+            String number = countService.getNumber().toString();
+            request.setAttribute("numVisit",number);
             return "updateMark.jsp";
         }
         return "noPriviledge.jsp";

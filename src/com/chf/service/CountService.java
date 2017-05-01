@@ -22,4 +22,9 @@ public class CountService {
         Integer totalVisitor = countDao.amountVisitor();
         return totalVisitor;
     }
+
+    public static  CountService releaseInstance(){
+        instance = null;
+        return instance;
+    }
 }
