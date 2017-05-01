@@ -125,11 +125,13 @@
                    $(this).href="#";
                 }
                 var checkedUserName=$(".resultsTable input[type=checkbox]:checked").val();
+                var checkedRole=$(".resultsTable input[type=checkbox]:checked").parents("tr").find(".tdRole").html();
                 $.ajax({
                     type: "POST",
                     url: "deleteUser.action",
                     data:{
                         userName: checkedUserName,
+                        role:checkedRole
                     },
                     dataType: "json"
                 });

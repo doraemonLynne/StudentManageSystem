@@ -19,7 +19,6 @@ public class DeleteMarkAction extends Action{
 		markService=new MarkService();
 		Mark dmark=new Mark();
 		dmark.setStuName(stuName);
-        System.out.println(stuName);
 		this.markService.deleteMark(dmark);
         List<Mark> marks=markService.findMark();
         request.setAttribute("marks",marks);

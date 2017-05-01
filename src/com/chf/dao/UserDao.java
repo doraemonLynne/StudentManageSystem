@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.chf.dao.dbhelp.DBUtil;
 import com.chf.entity.User;
+import com.chf.entity.Mark;
 
 public class UserDao {
 	/**
@@ -37,10 +38,18 @@ public class UserDao {
 	 */
 	public int delete(User user) {
 		StringBuffer sql = new StringBuffer();
+        StringBuffer sql1 = new StringBuffer();
 
 		sql.append("delete from user where username='" + user.getUserName() + "';");
+        sql1.append("delete from mark where stuName='" + user.getUserName() + "';");
 
-		return DBUtil.executeUpdateInsertDelete(sql.toString());
+        if(user.getRole()==0){
+            return DBUtil.executeUpdateInsertDelete(sql.toString())+DBUtil.executeUpdateInsertDelete(sql1.toString());
+        }
+        else
+        {
+            return DBUtil.executeUpdateInsertDelete(sql.toString());
+        }
 	}
 
 	/**
@@ -50,14 +59,26 @@ public class UserDao {
 	 */
 	public int insert(User user) {
 		StringBuffer sql = new StringBuffer();
+        StringBuffer sql1 = new StringBuffer();
 
 		sql.append("insert into user(username,password,role,roleId)");
 		sql.append("values('" + user.getUserName() + "',");
         sql.append("'" + user.getPassword() + "',");
         sql.append("'" + user.getRole() + "',");
-		sql.append("'" + user.getRoleId() + "');");
-
-		return DBUtil.executeUpdateInsertDelete(sql.toString());
+		sql.append("'" + user.getRoleId() + "'); ");
+        sql1.append("insert into mark(stuId,stuName,English,Math,Physics)");
+        sql1.append("values('" + user.getRoleId() + "',");
+        sql1.append("'" + user.getUserName() + "',");
+        sql1.append("'0',");
+        sql1.append("'0',");
+        sql1.append("'0');");
+        if(user.getRole()==0){
+          return DBUtil.executeUpdateInsertDelete(sql.toString())+DBUtil.executeUpdateInsertDelete(sql1.toString());
+        }
+        else
+        {
+            return DBUtil.executeUpdateInsertDelete(sql.toString());
+        }
 	}
 
 	/**
