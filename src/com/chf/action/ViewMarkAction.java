@@ -19,6 +19,7 @@ public class ViewMarkAction extends Action {
     private String[] subject;
     private String showMark;
     private String stuName;
+
 	@Override
 	public String execute()
 	{
@@ -29,6 +30,7 @@ public class ViewMarkAction extends Action {
 		User user=new User();
 		user=this.userService.findUserByUserName(userName);
         List<Mark> marks=markService.findMark();
+
         request.setAttribute("marks",marks);
 
         stuName=request.getParameter("stuName");

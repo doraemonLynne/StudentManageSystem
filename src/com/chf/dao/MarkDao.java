@@ -18,7 +18,8 @@ public class MarkDao {
             sql.append("stuName='"+mark.getStuName()+"',");
             sql.append("English='"+mark.getMarkEng()+"',");
             sql.append("Math='"+mark.getMarkMath()+"',");
-            sql.append("Physics='"+mark.getMarkPhy()+"'");
+            sql.append("Physics='"+mark.getMarkPhy()+"',");
+            sql.append("state='"+mark.getState()+"'");
             sql.append("WHERE id='" + mark.getId() + "';");
 
 			i = DBUtil.executeUpdateInsertDelete(sql.toString());
@@ -39,12 +40,13 @@ public class MarkDao {
     public int insert(Mark mark) {
         StringBuffer sql = new StringBuffer();
 
-        sql.append("insert into mark(stuId,stuName,English,Math,Physics)");
+        sql.append("insert into mark(stuId,stuName,English,Math,Physics,state)");
         sql.append("values('" + mark.getStuId() + "',");
         sql.append("'" + mark.getStuName() + "',");
         sql.append("'" + mark.getMarkEng() + "',");
         sql.append("'" + mark.getMarkMath() + "',");
-        sql.append("'" + mark.getMarkPhy() + "');");
+        sql.append("'" + mark.getMarkPhy() + "',");
+        sql.append("'" + mark.getState() + "');");
 
         return DBUtil.executeUpdateInsertDelete(sql.toString());
     }
@@ -82,6 +84,7 @@ public class MarkDao {
                 mark.setMarkEng(set.getInt("English"));
                 mark.setMarkMath(set.getInt("Math"));
                 mark.setMarkPhy(set.getInt("Physics"));
+                mark.setState(set.getString("state"));
 
                 list.add(mark);
             }

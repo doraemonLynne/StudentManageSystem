@@ -19,6 +19,8 @@ public class Mark
 
     private Integer markPhy;
 
+    private String state;
+
     public Integer getId() {
         return id;
     }
@@ -59,6 +61,12 @@ public class Mark
 
     public void setMarkPhy(Integer markPhy) {
         this.markPhy = markPhy;
+    }
+
+    public String getState() { return state; }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
 }

@@ -66,12 +66,13 @@ public class UserDao {
         sql.append("'" + user.getPassword() + "',");
         sql.append("'" + user.getRole() + "',");
 		sql.append("'" + user.getRoleId() + "'); ");
-        sql1.append("insert into mark(stuId,stuName,English,Math,Physics)");
+        sql1.append("insert into mark(stuId,stuName,English,Math,Physics,state)");
         sql1.append("values('" + user.getRoleId() + "',");
         sql1.append("'" + user.getUserName() + "',");
         sql1.append("'0',");
         sql1.append("'0',");
-        sql1.append("'0');");
+        sql1.append("'0',");
+        sql1.append("'UnMark');");
         if(user.getRole()==0){
           return DBUtil.executeUpdateInsertDelete(sql.toString())+DBUtil.executeUpdateInsertDelete(sql1.toString());
         }

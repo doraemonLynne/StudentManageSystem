@@ -13,6 +13,8 @@ public class UpdateMarkAction extends Action {
 	private UserService userService;
     private MarkService markService;
 	private String userName;
+    private Integer NumOfUnmark=0;
+    private Integer NumOfMarked=0;
 	@Override
 	public String execute()
 	{
@@ -23,7 +25,19 @@ public class UpdateMarkAction extends Action {
         User user=new User();
         user=this.userService.findUserByUserName(userName);
         List<Mark> marks=markService.findMark();
+
+        for(int i=0;i<marks.size();i++){
+            if (marks.get(i).getState().equalsIgnoreCase("unmark")){
+                NumOfUnmark++;
+            }
+            else if(marks.get(i).getState().equalsIgnoreCase("marked")){
+                NumOfMarked++;
+            }
+        }
+
         request.setAttribute("marks",marks);
+        request.setAttribute("NumOfUnmark",NumOfUnmark);
+        request.setAttribute("NumOfMarked",NumOfMarked);
 
         if(user.getRole()==2||user.getRole()==1){
             return "updateMark.jsp";

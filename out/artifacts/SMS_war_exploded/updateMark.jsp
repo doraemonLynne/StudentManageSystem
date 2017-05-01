@@ -17,6 +17,11 @@
         <a href="deleteMark.action" id="delMark">Delete</a>
         <a href="#" id="updateMark">Update</a>
     </div>
+    <div class="NumMark">
+        <i>You have <b><% out.println(request.getAttribute("NumOfUnmark")); %></b>unmarked students!</i>
+        <br>
+        <i>You have <b><% out.println(request.getAttribute("NumOfMarked")); %></b>marked students!</i>
+    </div>
     <table class="resultsTable sortable">
         <tr>
             <th></th>
@@ -26,6 +31,7 @@
             <th>English</th>
             <th>Math</th>
             <th>Physics</th>
+            <th>State</th>
         </tr>
         <c:forEach var="mark" items="${marks}">
             <tr>
@@ -36,6 +42,7 @@
                 <td class="tdEnglish">${mark.markEng}</td>
                 <td class="tdMath">${mark.markMath}</td>
                 <td class="tdPhysics">${mark.markPhy}</td>
+                <td>${mark.state}</td>
             </tr>
         </c:forEach>
     </table>

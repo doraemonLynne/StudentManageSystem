@@ -35,6 +35,7 @@
             <th>English</th>
             <th>Math</th>
             <th>Physics</th>
+            <th>State</th>
         </tr>
         <c:forEach var="mark" items="${marks}">
             <tr>
@@ -45,6 +46,7 @@
                 <td>${mark.markEng}</td>
                 <td>${mark.markMath}</td>
                 <td>${mark.markPhy}</td>
+                <td>${mark.state}</td>
             </tr>
         </c:forEach>
     </table>
