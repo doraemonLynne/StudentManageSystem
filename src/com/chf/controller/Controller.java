@@ -44,15 +44,6 @@ public class Controller implements Filter
             try
             {
                 switch(actionName){
-                    case "/findUser":{
-                        action=new FindUserAction();
-                        action.setRequest(request);
-                        action.setResponse(response);
-                        String result=action.execute();
-                        dispatcher=request.getRequestDispatcher(result);
-                        dispatcher.forward(request,response);
-                        break;
-                    }
                     case "/addUser":{
                         action=new AddUserAction();
                         action.setRequest(request);

@@ -6,7 +6,6 @@ import java.util.List;
 
 import com.chf.dao.dbhelp.DBUtil;
 import com.chf.entity.User;
-import com.chf.entity.Mark;
 
 public class UserDao {
 	/**
@@ -81,36 +80,6 @@ public class UserDao {
             return DBUtil.executeUpdateInsertDelete(sql.toString());
         }
 	}
-
-	/**
-	 * ���id�����û�
-	 * @param id������ҵ��û�id
-	 * @return ����������û�
-	 */
-	public User findById(int id) {
-		User user = null;
-		StringBuffer sql = new StringBuffer();
-		sql.append("select * from user where id=" + id + ";");
-
-		try {
-			ResultSet set = DBUtil.executeQuery(sql.toString());
-			
-			while (set.next()) {
-				
-				user = new User();
-				user.setId(set.getInt("id"));
-				user.setUserName(set.getString("username"));
-				user.setPassword(set.getString("password"));
-                user.setRole(set.getInt("role"));
-                user.setRoleId(set.getInt("roleId"));
-
-				break;
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		return user;
-	}
 	
 	public User findByUserName(String userName) {
 		User user = null;
@@ -136,12 +105,7 @@ public class UserDao {
 		}
 		return user;
 	}
-	
-	/**
-	 * ����û������
-	 * @param userName������ҵ��û���
-	 * @return ����������û��б�
-	 */
+
 	public List<User> findByName(String userName){
 		List<User> list = new ArrayList<User>();
 		

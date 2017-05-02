@@ -8,13 +8,6 @@ import com.chf.entity.User;
 public class UserService {
 	private UserDao userDao = new UserDao();
 
-	/**
-	 * ����û�������û�
-	 * @param 
-	 * userName���û���
-	 * @return 
-	 * ���ҵ����û��б�
-	 */
 	public List<User> findUser(String userName)
 	{
 		List<User> list= userDao.findByName(userName);

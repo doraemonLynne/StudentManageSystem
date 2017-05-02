@@ -30,6 +30,7 @@ public class UpdateMarkAction extends Action {
         user=this.userService.findUserByUserName(userName);
         List<Mark> marks=markService.findMark();
 
+        //state pattern
         for(int i=0;i<marks.size();i++){
             if (marks.get(i).getState().equalsIgnoreCase("unmark")){
                 NumOfUnmark++;
